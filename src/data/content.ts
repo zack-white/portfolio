@@ -1,0 +1,280 @@
+export const PERSONAL = {
+  name: "Zachary White",
+  tagline: "Full-Stack + Backend Engineer focused on performance, data systems, and real-world impact.",
+  email: "zack@zwhite.dev",
+  phone: "860-942-9116",
+  linkedin: "https://www.linkedin.com/in/zachary-white-455b37274/",
+  github: "https://github.com/zack-white",
+  resumePdf: "/zacharyWhiteJan25-2.pdf",
+} as const;
+
+export const HERO_INTRO =
+  "Full-stack and backend engineer with strengths in TypeScript, Postgres, Python, and performance-minded systems work. I've led teams shipping production software and built ML/data pipelines from prototype to evaluation.";
+
+export const CTA_COPY =
+  "Open to new grad software engineering opportunities starting Summer 2026 (Backend, Full-Stack, ML/Data, Infrastructure/Performance).";
+
+export type ProjectCategory = "fullstack" | "ml" | "systems" | "backend";
+
+export const PROJECTS = [
+  {
+    id: "somerville-museum",
+    title: "Somerville Museum Inventory System",
+    category: "fullstack" as ProjectCategory,
+    categoryLabel: "Full-Stack / Backend / Infrastructure",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Serverless", "Vercel"],
+    oneLiner:
+      "Architected and shipped a production inventory management platform for the Somerville Museum.",
+    contributions: [
+      "Led 12 engineers through sprint cycles and code review standards",
+      "Designed architecture and relational schema",
+      "Built backend routes/serverless handlers",
+      "Introduced caching and query bundling for performance",
+      "Modernized hosting/database infrastructure",
+    ],
+    impact: [
+      { metric: "44%", label: "reduction in load times" },
+      { metric: "95%", label: "reduction in annual operating costs" },
+      { metric: "60%", label: "reduction in staff onboarding time" },
+    ],
+    href: "https://github.com/JumboCode/somerville-museum",
+  },
+  {
+    id: "commonwealth-kitchen",
+    title: "Commonwealth Kitchen Job Board",
+    category: "fullstack" as ProjectCategory,
+    categoryLabel: "Full-Stack / Backend",
+    stack: ["Next.js", "TypeScript", "Clerk Auth", "Postgres (Neon)", "Vercel"],
+    oneLiner:
+      "Built a production full-stack job board with role-based experiences for member vs business users.",
+    contributions: [
+      "Full-stack application architecture and implementation",
+      "Clerk auth integration and role-based flows",
+      "Postgres schema design and deployment pipeline",
+    ],
+    impact: [
+      { metric: "80%", label: "increase in member engagement" },
+      { metric: "50%", label: "decrease in admin overhead" },
+    ],
+    href: "https://github.com/JumboCode/commonwealth-kitchen",
+  },
+  {
+    id: "jumbomap",
+    title: "JumboMap",
+    category: "fullstack" as ProjectCategory,
+    categoryLabel: "Full-Stack Product Engineering",
+    stack: ["React", "TypeScript", "Tailwind", "MySQL", "Next.js API"],
+    oneLiner:
+      "Interactive event/tabling mapping platform for campus operations.",
+    contributions: [
+      "Built map interaction + user workflows",
+      "Implemented REST APIs for auth, verification, and DB access",
+    ],
+    impact: [
+      { metric: "~150", label: "concurrent users at Tufts Community Day" },
+      { metric: "Adopted", label: "by Tufts OCL" },
+    ],
+    href: "https://github.com/zack-white/jumbomap",
+  },
+  {
+    id: "reddit-dashboard",
+    title: "Reddit Politics Sentiment Dashboard",
+    category: "ml" as ProjectCategory,
+    categoryLabel: "ML + Data + Full-Stack",
+    stack: ["MongoDB", "GPT-4 API", "Python", "JavaScript"],
+    oneLiner:
+      "Built a dashboard that scrapes political forums and classifies sentiment + political leaning.",
+    contributions: [
+      "Multi-source data scraping pipeline",
+      "MongoDB schema + data flow design",
+      "GPT-4 integration + custom classification model",
+      "Frontend dashboard for model outputs",
+    ],
+    impact: [
+      { metric: "84.3%", label: "leaning classification accuracy" },
+      { metric: "92.3%", label: "sentiment accuracy" },
+    ],
+    href: "https://github.com/zack-white/jumbohack24-political_dashboard",
+  },
+  {
+    id: "twitch-classifier",
+    title: "Twitch Language Detection",
+    category: "ml" as ProjectCategory,
+    categoryLabel: "Graph ML / Data Engineering",
+    stack: ["Python", "Node2Vec", "XGBoost", "NetworkX"],
+    oneLiner:
+      "Predicted language communities from graph structure using embeddings + supervised learning.",
+    contributions: [
+      "Generated Node2Vec embeddings",
+      "Trained and tuned XGBoost classifier",
+      "Built evaluation and visualization pipeline",
+    ],
+    impact: [
+      { metric: "90.1%", label: "accuracy on 168k-node Twitch SNAP graph" },
+      { metric: "0.88", label: "macro F1 across six language families" },
+    ],
+    href: "https://github.com/zack-white/twitch-classifier",
+  },
+  {
+    id: "chess-engine",
+    title: "Chess Engine Optimization",
+    category: "systems" as ProjectCategory,
+    categoryLabel: "Performance / Systems",
+    stack: ["C++"],
+    oneLiner:
+      "Alpha-beta pruning, move ordering, and board representation optimization.",
+    contributions: [
+      "Implemented alpha-beta pruning + move ordering",
+      "Improved board representation and benchmarking",
+    ],
+    impact: [{ metric: "70%", label: "win rate vs initial implementation" }],
+    href: null,
+  },
+  {
+    id: "image-compressor",
+    title: "Image Compressor/Decompressor",
+    category: "systems" as ProjectCategory,
+    categoryLabel: "Performance / Systems",
+    stack: ["C"],
+    oneLiner:
+      "Custom binary encoding/decoding pipeline with optimized memory handling.",
+    contributions: [
+      "Built custom binary encoding/decoding pipeline",
+      "Optimized memory handling",
+    ],
+    impact: [
+      { metric: "", label: "Compressed to 33% of original size" },
+      { metric: "~3%", label: "quality loss with meaningful compression" },
+    ],
+    href: null,
+  },
+] as const;
+
+export const EXPERIENCE = [
+  {
+    role: "Technical Lead",
+    org: "JumboCode at Tufts",
+    period: "Jun 2024 – Present",
+    highlights: [
+      "Led team of 12 engineers delivering production web systems for nonprofit clients",
+      "Ran sprint planning and code reviews; made architecture and rollout decisions",
+      "Architected systems using Next.js + Postgres + serverless infrastructure",
+      "44% faster load times, 95% lower annual costs, 60% faster onboarding",
+    ],
+  },
+  {
+    role: "Human-Computer Interaction Researcher",
+    org: "Tufts University",
+    period: "Feb 2024 – Jun 2025",
+    highlights: [
+      "Designed and ran studies on perceived vs actual cognitive workload when using LLMs",
+      "Analyzed data from 80 participants using Python and visualization tooling",
+    ],
+  },
+  {
+    role: "Emergency Medical Technician (EMT)",
+    org: "Cataldo Ambulance Service",
+    period: "May 2023 – Present",
+    highlights: [
+      "High-pressure decision making, communication, accountability, and operational discipline",
+    ],
+  },
+  {
+    role: "Designer/Developer Summer Fellow",
+    org: "Striide: Site",
+    period: "May 2024 – Aug 2024",
+    highlights: [
+      "Built women's-safety-focused navigation application",
+      "Implemented frontend and signup flows for 200-user beta",
+    ],
+  },
+] as const;
+
+export const EDUCATION = {
+  school: "Tufts University",
+  degree: "B.S. in Computer Science, Minor in Philosophy",
+  expected: "May 2026",
+  gpa: "3.59",
+  highlights: [
+    "Dean's List: Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025",
+    "Publication: Visualization and Workload with Implicit fNIRS-based BCI (Co-Author)",
+  ],
+  coursework: [
+    "Data Structures",
+    "Algorithms",
+    "Machine Structure & Assembly",
+    "Human-Computer Interaction",
+    "Cryptography",
+    "Computation Theory",
+    "Programming Languages",
+    "Intro ML and Data Mining",
+    "Network Science",
+    "Database Systems",
+    "Visual Analytics",
+    "Computational Biology",
+    "Sports Analytics",
+  ],
+} as const;
+
+export const SKILLS = {
+  languages: [
+    "TypeScript/JavaScript",
+    "Python",
+    "C/C++",
+    "SQL (Postgres)",
+    "HTML/CSS",
+    "R",
+  ],
+  frameworks: [
+    "React",
+    "Node.js",
+    "Next.js",
+    "Express",
+    "Tailwind",
+    "Angular",
+    "Flask",
+  ],
+  dataMl: [
+    "pandas",
+    "NumPy",
+    "Matplotlib",
+    "scikit-learn",
+    "PyTorch",
+    "Node2Vec",
+    "XGBoost",
+  ],
+  tools: ["Git", "Docker", "AWS", "GCP", "Vercel", "Neon", "Clerk"],
+  systems: [
+    "Profiling",
+    "Query optimization",
+    "Algorithmic tuning",
+    "Benchmarking",
+  ],
+} as const;
+
+export const BLOG_POSTS = [
+  {
+    slug: "welcome",
+    title: "Welcome to the Blog",
+    excerpt: "A place for technical notes, project reflections, and ideas.",
+    date: "2025-02-13",
+    tags: ["meta"],
+    body: "This blog is a place to share technical notes, project reflections, and ideas from my work in software engineering. I'll write about full-stack development, backend systems, ML pipelines, and things I learn along the way. This is my first time creating a blog, so expect very intermittent updates, but I'm excited to share more.",
+  },
+  {
+    slug: "building-this-portfolio",
+    title: "Building This Portfolio",
+    excerpt: "Notes on the stack and design decisions behind zwhite.dev.",
+    date: "2025-02-01",
+    tags: ["web", "next.js"],
+    body: "This portfolio is built with Next.js 16, React, and Tailwind CSS. I chose a minimal dark theme with subtle grid animations and a focus on readability. The site is deployed on Vercel. I plan to continue iterating on the design and content of the site, and provide updates on projects I am currently working on. I'm excited to share more about my work and ideas with you!",
+  },
+] as const;
+
+export const NAV_ITEMS = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/skills", label: "Skills" },
+  { href: "/blog", label: "Blog" },
+] as const;
