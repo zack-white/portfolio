@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { EXPERIENCE, EDUCATION } from "@/data/content";
 
 const fadeUp = { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 } };
@@ -23,16 +24,31 @@ export default function Experience() {
       <div className="space-y-12">
         {EXPERIENCE.map((job) => (
           <motion.div key={job.role} variants={fadeUp} transition={{ duration: 0.4 }} className="border-b border-[var(--color-border)] pb-12 last:border-0 last:pb-0">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 mb-3">
-              <h3 className="text-lg font-semibold text-[var(--color-text)]">
-                {job.role}
-              </h3>
-              <span className="text-sm text-[var(--color-text-muted)] font-mono">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
+              <div className="flex items-start gap-4">
+                {job.logo && (
+                  <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-card)] flex-shrink-0">
+                    <Image
+                      src={job.logo}
+                      alt=""
+                      fill
+                      className="object-contain p-1"
+                      sizes="48px"
+                    />
+                  </div>
+                )}
+                <div>
+                  <h3 className="text-lg font-semibold text-[var(--color-text)]">
+                    {job.role}
+                  </h3>
+                  <p className="text-[var(--color-accent)] text-sm mt-1">{job.org}</p>
+                </div>
+              </div>
+              <span className="text-sm text-[var(--color-text-muted)] font-mono sm:mt-1">
                 {job.period}
               </span>
             </div>
-            <p className="text-[var(--color-accent)] text-sm mb-4">{job.org}</p>
-            <ul className="space-y-2 text-[var(--color-text-muted)]">
+            <ul className="space-y-2 text-[var(--color-text-muted)] mt-4">
               {job.highlights.map((h, i) => (
                 <li key={i} className="flex gap-2">
                   <span className="text-[var(--color-accent)] shrink-0">·</span>

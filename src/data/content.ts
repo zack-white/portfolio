@@ -154,6 +154,7 @@ export const EXPERIENCE = [
   {
     role: "Technical Lead",
     org: "JumboCode at Tufts",
+    logo: "/jumbocode.png",
     period: "Jun 2024 – Present",
     highlights: [
       "Led team of 12 engineers delivering production web systems for nonprofit clients",
@@ -165,6 +166,7 @@ export const EXPERIENCE = [
   {
     role: "Human-Computer Interaction Researcher",
     org: "Tufts University",
+    logo: "",
     period: "Feb 2024 – Jun 2025",
     highlights: [
       "Designed and ran studies on perceived vs actual cognitive workload when using LLMs",
@@ -174,6 +176,7 @@ export const EXPERIENCE = [
   {
     role: "Emergency Medical Technician (EMT)",
     org: "Cataldo Ambulance Service",
+    logo: "/cataldo.png",
     period: "May 2023 – Present",
     highlights: [
       "High-pressure decision making, communication, accountability, and operational discipline",
@@ -182,6 +185,7 @@ export const EXPERIENCE = [
   {
     role: "Designer/Developer Summer Fellow",
     org: "Striide: Site",
+    logo: "",
     period: "May 2024 – Aug 2024",
     highlights: [
       "Built women's-safety-focused navigation application",

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { PERSONAL, HERO_INTRO, CTA_COPY } from "@/data/content";
 
 const fadeUpTransition = { duration: 0.5, ease: "easeOut" as const };
@@ -11,6 +12,8 @@ export default function Hero() {
     <section
       className="min-h-screen flex flex-col justify-center pt-20 pb-16 section"
     >
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-12">
+        <div className="flex-1 min-w-0 order-2 md:order-1">
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,6 +88,25 @@ export default function Hero() {
           GitHub
         </a>
       </motion.div>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex-shrink-0 order-1 md:order-2"
+        >
+          <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-[var(--color-border)] ring-2 ring-[var(--color-accent)]/20">
+            <Image
+              src="/headshot.jpg"
+              alt="Zachary White"
+              fill
+              sizes="(max-width: 768px) 208px, 256px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
