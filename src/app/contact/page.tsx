@@ -1,7 +1,7 @@
 import Contact from "@/components/Contact";
 
 export const metadata = {
-  title: "Contact — Zachary White",
+  title: "Contact",
   description: "Open to new grad software engineering opportunities starting Summer 2026.",
 };
 

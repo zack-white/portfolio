@@ -6,15 +6,21 @@ import LoadingScreen from "@/components/LoadingScreen";
 import BackgroundEffects from "@/components/BackgroundEffects";
 
 export const metadata: Metadata = {
-  title: "Zachary White — Full-Stack + Backend Engineer",
+  title: {
+    default: "Zachary White",
+    template: "Zachary White | %s",
+  },
   description:
     "Full-stack and backend engineer focused on performance, data systems, and real-world impact. Tufts CS '26. Open to new grad SWE roles Summer 2026.",
   icons: {
     icon: [
-      { url: "/icons8-bash-color-16.png", sizes: "16x16" },
-      { url: "/icons8-bash-color-32.png", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
     ],
-    apple: "/icons8-bash-color-96.png",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon-32x32.png",
   },
 };
 

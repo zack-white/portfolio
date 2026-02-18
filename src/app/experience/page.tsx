@@ -1,7 +1,7 @@
 import Experience from "@/components/Experience";
 
 export const metadata = {
-  title: "Experience — Zachary White",
+  title: "Experience",
   description: "Engineering leadership, research, and professional experience.",
 };
 

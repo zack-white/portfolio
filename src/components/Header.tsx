@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS, PERSONAL } from "@/data/content";
 
@@ -14,9 +15,17 @@ export default function Header() {
       <div className="section flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors duration-200"
+          className="inline-flex items-center hover:opacity-90 transition-opacity duration-200"
+          aria-label="Home"
         >
-          {PERSONAL.name}
+          <Image
+            src="/zw-logo.svg"
+            alt=""
+            width={40}
+            height={40}
+            className="rounded-md"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

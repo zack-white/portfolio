@@ -1,7 +1,7 @@
 import Projects from "@/components/Projects";
 
 export const metadata = {
-  title: "Projects — Zachary White",
+  title: "Projects",
   description: "Production systems, ML pipelines, and performance-focused engineering projects.",
 };
 

@@ -1,7 +1,7 @@
 import Blog from "@/components/Blog";
 
 export const metadata = {
-  title: "Blog — Zachary White",
+  title: "Blog",
   description: "Technical notes, project reflections, and ideas on software engineering.",
 };
 

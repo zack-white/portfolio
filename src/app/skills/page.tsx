@@ -1,7 +1,7 @@
 import Skills from "@/components/Skills";
 
 export const metadata = {
-  title: "Skills — Zachary White",
+  title: "Skills",
   description: "TypeScript, Next.js, Postgres, Python, and systems/performance experience.",
 };
 
