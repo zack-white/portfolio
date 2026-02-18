@@ -38,6 +38,7 @@ export const PROJECTS = [
       { metric: "60%", label: "reduction in staff onboarding time" },
     ],
     href: "https://github.com/JumboCode/somerville-museum",
+    demo: "https://somervillemuseum.vercel.app",
   },
   {
     id: "commonwealth-kitchen",
@@ -57,6 +58,7 @@ export const PROJECTS = [
       { metric: "50%", label: "decrease in admin overhead" },
     ],
     href: "https://github.com/JumboCode/commonwealth-kitchen",
+    demo: "https://commonwealth-kitchen.vercel.app",
   },
   {
     id: "jumbomap",
@@ -75,6 +77,7 @@ export const PROJECTS = [
       { metric: "Adopted", label: "by Tufts OCL" },
     ],
     href: "https://github.com/zack-white/jumbomap",
+    demo: "https://tufts-jumbomap.vercel.app",
   },
   {
     id: "reddit-dashboard",
@@ -95,6 +98,7 @@ export const PROJECTS = [
       { metric: "92.3%", label: "sentiment accuracy" },
     ],
     href: "https://github.com/zack-white/jumbohack24-political_dashboard",
+    demo: "https://jumbohack24-political-dashboard.vercel.app",
   },
   {
     id: "twitch-classifier",
@@ -114,6 +118,7 @@ export const PROJECTS = [
       { metric: "0.88", label: "macro F1 across six language families" },
     ],
     href: "https://github.com/zack-white/twitch-classifier",
+    demo: null,
   },
   {
     id: "chess-engine",
@@ -129,6 +134,7 @@ export const PROJECTS = [
     ],
     impact: [{ metric: "70%", label: "win rate vs initial implementation" }],
     href: null,
+    demo: null,
   },
   {
     id: "image-compressor",
@@ -147,6 +153,7 @@ export const PROJECTS = [
       { metric: "~3%", label: "quality loss with meaningful compression" },
     ],
     href: null,
+    demo: null,
   },
 ] as const;
 
