@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, type ProjectCategory } from "@/data/content";
 
@@ -63,11 +64,23 @@ export default function Projects() {
                 <p className="text-xs font-mono text-[var(--color-accent)] mb-1">
                   {project.categoryLabel}
                 </p>
-                <h3 className="text-xl font-semibold text-[var(--color-text)]">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="text-xl font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors block"
+                >
                   {project.title}
-                </h3>
+                </Link>
               </div>
-              <div className="flex flex-wrap gap-4 shrink-0">
+              <div className="flex flex-wrap items-center gap-4 shrink-0">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+                >
+                  View project
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
                 {project.demo && (
                   <a
                     href={project.demo}

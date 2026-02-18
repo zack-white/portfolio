@@ -39,6 +39,12 @@ export const PROJECTS = [
     ],
     href: "https://github.com/JumboCode/somerville-museum",
     demo: "https://somervillemuseum.vercel.app",
+    screenshots: [
+      "/somervillemuseum/project_screenshot_somervillemuseum_01.png",
+      "/somervillemuseum/project_screenshot_somervillemuseum_02.png",
+      "/somervillemuseum/project_screenshot_somervillemuseum_03.png",
+      "/somervillemuseum/project_screenshot_somervillemuseum_04.png",
+    ],
   },
   {
     id: "commonwealth-kitchen",
@@ -59,6 +65,7 @@ export const PROJECTS = [
     ],
     href: "https://github.com/JumboCode/commonwealth-kitchen",
     demo: "https://commonwealth-kitchen.vercel.app",
+    screenshots: ["/CWK.png"],
   },
   {
     id: "jumbomap",
@@ -78,6 +85,14 @@ export const PROJECTS = [
     ],
     href: "https://github.com/zack-white/jumbomap",
     demo: "https://tufts-jumbomap.vercel.app",
+    screenshots: [
+      "/jumbomap/project_screenshot_jumbomap_01.png",
+      "/jumbomap/project_screenshot_jumbomap_02.png",
+      "/jumbomap/project_screenshot_jumbomap_03.png",
+      "/jumbomap/project_screenshot_jumbomap_04.png",
+      "/jumbomap/project_screenshot_jumbomap_05.png",
+      "/jumbomap/project_screenshot_jumbomap_06.png",
+    ],
   },
   {
     id: "reddit-dashboard",
@@ -99,6 +114,10 @@ export const PROJECTS = [
     ],
     href: "https://github.com/zack-white/jumbohack24-political_dashboard",
     demo: "https://jumbohack24-political-dashboard.vercel.app",
+    screenshots: [
+      "/politicaldashboard/project_screenshot_politicaldashboard_01.png",
+      "/politicaldashboard/project_screenshot_politicaldashboard_02.png",
+    ],
   },
   {
     id: "twitch-classifier",
@@ -119,6 +138,7 @@ export const PROJECTS = [
     ],
     href: "https://github.com/zack-white/twitch-classifier",
     demo: null,
+    screenshots: [],
   },
   {
     id: "chess-engine",
@@ -135,6 +155,7 @@ export const PROJECTS = [
     impact: [{ metric: "70%", label: "win rate vs initial implementation" }],
     href: null,
     demo: null,
+    screenshots: [],
   },
   {
     id: "image-compressor",
@@ -154,6 +175,7 @@ export const PROJECTS = [
     ],
     href: null,
     demo: null,
+    screenshots: [],
   },
 ] as const;
 
