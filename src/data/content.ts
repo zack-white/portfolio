@@ -195,7 +195,7 @@ export const EXPERIENCE = [
   {
     role: "Human-Computer Interaction Researcher",
     org: "Tufts University",
-    logo: "",
+    logo: "/seal.png",
     period: "Feb 2024 – Jun 2025",
     highlights: [
       "Designed and ran studies on perceived vs actual cognitive workload when using LLMs",
@@ -214,7 +214,7 @@ export const EXPERIENCE = [
   {
     role: "Designer/Developer Summer Fellow",
     org: "Striide: Site",
-    logo: "",
+    logo: "/seal.png",
     period: "May 2024 – Aug 2024",
     highlights: [
       "Built women's-safety-focused navigation application",
@@ -225,6 +225,7 @@ export const EXPERIENCE = [
 
 export const EDUCATION = {
   school: "Tufts University",
+  logo: "/seal.png",
   degree: "B.S. in Computer Science, Minor in Philosophy",
   expected: "May 2026",
   gpa: "3.59",

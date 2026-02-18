@@ -61,13 +61,28 @@ export default function Experience() {
       </div>
 
       <motion.div variants={fadeUp} transition={{ duration: 0.4 }} className="mt-16 pt-12 border-t border-[var(--color-border)]">
-        <h3 className="text-lg font-semibold text-[var(--color-text)] mb-2">
-          Education
-        </h3>
-        <p className="text-[var(--color-accent)] text-sm mb-1">
-          {EDUCATION.school}
-        </p>
-        <p className="text-[var(--color-text-muted)] text-sm mb-4">
+        <div className="flex items-start gap-4 mb-2">
+          {EDUCATION.logo && (
+            <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-card)] flex-shrink-0">
+              <Image
+                src={EDUCATION.logo}
+                alt=""
+                fill
+                className="object-contain p-1"
+                sizes="48px"
+              />
+            </div>
+          )}
+          <div>
+            <h3 className="text-lg font-semibold text-[var(--color-text)] mb-1">
+              Education
+            </h3>
+            <p className="text-[var(--color-accent)] text-sm">
+              {EDUCATION.school}
+            </p>
+          </div>
+        </div>
+        <p className="text-[var(--color-text-muted)] text-sm mb-4 mt-4">
           {EDUCATION.degree} · Expected {EDUCATION.expected} · GPA {EDUCATION.gpa}
         </p>
         <ul className="space-y-1 text-sm text-[var(--color-text-muted)] mb-4">
