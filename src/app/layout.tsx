@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
@@ -42,6 +43,7 @@ export default function RootLayout({
             <PageTransition>{children}</PageTransition>
           </main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
