@@ -51,7 +51,7 @@ export const PROJECTS = [
     title: "PingPoint",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack / Cybersecurity / JumboHack 2026",
-    stack: ["Next.js", "TypeScript", "FastAPI", "Scapy", "Nmap", "Raspberry Pi", "Claude API", "Tailwind", "XYFlow"],
+    stack: ["Next.js", "FastAPI", "Raspberry Pi", "Nmap"],
     oneLiner:
       "Real-time Wi-Fi security dashboard built at JumboHack 2026 that turns packet captures and port scans into plain-language risk insights for non-technical users.",
     contributions: [
@@ -64,7 +64,7 @@ export const PROJECTS = [
       { metric: "1st place", label: "JumboHack 2026 (Cybersecurity track)" },
     ],
     href: null,
-    demo: null,
+    demo: "https://www.youtube.com/watch?v=PXDc3J2S0Ts",
     screenshots: [],
   },
   {
