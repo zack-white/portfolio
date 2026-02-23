@@ -49,6 +49,8 @@ export const PROJECTS = [
   {
     id: "pingpoint",
     title: "PingPoint",
+    logo: "/pingpoint/Logo.svg",
+    logoText: "/pingpoint/text.svg",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack / Cybersecurity / JumboHack 2026",
     stack: ["Next.js", "FastAPI", "Raspberry Pi", "Nmap"],

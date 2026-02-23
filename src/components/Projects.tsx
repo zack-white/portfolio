@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, type ProjectCategory } from "@/data/content";
 
@@ -61,6 +62,17 @@ export default function Projects() {
             >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
               <div>
+                {project.logo && (
+                  <div className="mb-3">
+                    <Image
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      width={40}
+                      height={40}
+                      className="rounded-md"
+                    />
+                  </div>
+                )}
                 <p className="text-xs font-mono text-[var(--color-accent)] mb-1">
                   {project.categoryLabel}
                 </p>

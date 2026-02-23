@@ -44,6 +44,17 @@ export default async function ProjectDetailPage({
         </Link>
 
         <header className="mb-10">
+          {project.logoText && (
+            <div className="mb-4">
+              <Image
+                src={project.logoText}
+                alt={`${project.title} logo`}
+                width={220}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+          )}
           <p className="text-xs font-mono text-[var(--color-accent)] mb-2">
             {project.categoryLabel}
           </p>
