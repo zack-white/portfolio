@@ -58,7 +58,7 @@ export const PROJECTS = [
       "Built dashboard interaction flows and scan-state UX (initial scan + re-scan behavior)",
       "Implemented Next.js API proxy routes to Pi endpoints for scan, Nmap, and LLM workflows",
       "Wired streaming scan + analysis data into frontend state and device detail views",
-      "Shipped routing and integration across frontend ↔ backend under hackathon time constraints",
+      "Configured Scapy scans and returns via FastAPI on Raspberry Pi 5",
     ],
     impact: [
       { metric: "1st place", label: "JumboHack 2026 (Cybersecurity track)" },
