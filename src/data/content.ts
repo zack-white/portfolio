@@ -47,6 +47,27 @@ export const PROJECTS = [
     ],
   },
   {
+    id: "pingpoint",
+    title: "PingPoint",
+    category: "fullstack" as ProjectCategory,
+    categoryLabel: "Full-Stack / Cybersecurity / JumboHack 2026",
+    stack: ["Next.js", "TypeScript", "FastAPI", "Scapy", "Nmap", "Raspberry Pi", "Claude API", "Tailwind", "XYFlow"],
+    oneLiner:
+      "Real-time Wi-Fi security dashboard built at JumboHack 2026 that turns packet captures and port scans into plain-language risk insights for non-technical users.",
+    contributions: [
+      "Built dashboard interaction flows and scan-state UX (initial scan + re-scan behavior)",
+      "Implemented Next.js API proxy routes to Pi endpoints for scan, Nmap, and LLM workflows",
+      "Wired streaming scan + analysis data into frontend state and device detail views",
+      "Shipped routing and integration across frontend ↔ backend under hackathon time constraints",
+    ],
+    impact: [
+      { metric: "1st place", label: "JumboHack 2026 (Cybersecurity track)" },
+    ],
+    href: null,
+    demo: null,
+    screenshots: [],
+  },
+  {
     id: "commonwealth-kitchen",
     title: "Commonwealth Kitchen Job Board",
     category: "fullstack" as ProjectCategory,
