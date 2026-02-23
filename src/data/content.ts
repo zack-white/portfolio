@@ -63,7 +63,7 @@ export const PROJECTS = [
     impact: [
       { metric: "1st place", label: "JumboHack 2026 (Cybersecurity track)" },
     ],
-    href: null,
+    href: "https://github.com/zack-white/pingpoint",
     demo: "https://www.youtube.com/watch?v=PXDc3J2S0Ts",
     screenshots: [],
   },
