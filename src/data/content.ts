@@ -20,6 +20,8 @@ export const PROJECTS = [
   {
     id: "somerville-museum",
     title: "Somerville Museum Inventory System",
+    logo: "/somervillemuseum/sm-logo.svg",
+    logoText: "/somervillemuseum/SM_LOGO.svg",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack / Backend / Infrastructure",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Serverless", "Vercel"],
@@ -72,6 +74,8 @@ export const PROJECTS = [
   {
     id: "commonwealth-kitchen",
     title: "Commonwealth Kitchen Job Board",
+    logo: "",
+    logoText: "",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack / Backend",
     stack: ["Next.js", "TypeScript", "Clerk Auth", "Postgres (Neon)", "Vercel"],
@@ -93,6 +97,8 @@ export const PROJECTS = [
   {
     id: "jumbomap",
     title: "JumboMap",
+    logo: "/jumbomap/logo-footer-dark.svg",
+    logoText: "/jumbomap/logo-dark.svg",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack Product Engineering",
     stack: ["React", "TypeScript", "Tailwind", "MySQL", "Next.js API"],
@@ -120,6 +126,8 @@ export const PROJECTS = [
   {
     id: "reddit-dashboard",
     title: "Reddit Politics Sentiment Dashboard",
+    logo: "/reddit/reddit-1.svg",
+    logoText: "/reddit/reddit-4.svg",
     category: "ml" as ProjectCategory,
     categoryLabel: "ML + Data + Full-Stack",
     stack: ["MongoDB", "GPT-4 API", "Python", "JavaScript"],
@@ -145,6 +153,8 @@ export const PROJECTS = [
   {
     id: "twitch-classifier",
     title: "Twitch Language Detection",
+    logo: "/twitch/twitch-icon.svg",
+    logoText: "/twitch/twitch-horizontal.svg",
     category: "ml" as ProjectCategory,
     categoryLabel: "Graph ML / Data Engineering",
     stack: ["Python", "Node2Vec", "XGBoost", "NetworkX"],
@@ -166,6 +176,8 @@ export const PROJECTS = [
   {
     id: "chess-engine",
     title: "Chess Engine Optimization",
+    logo: "",
+    logoText: "",
     category: "systems" as ProjectCategory,
     categoryLabel: "Performance / Systems",
     stack: ["C++"],
@@ -183,6 +195,8 @@ export const PROJECTS = [
   {
     id: "image-compressor",
     title: "Image Compressor/Decompressor",
+    logo: "",
+    logoText: "",
     category: "systems" as ProjectCategory,
     categoryLabel: "Performance / Systems",
     stack: ["C"],

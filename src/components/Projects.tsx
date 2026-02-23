@@ -60,19 +60,21 @@ export default function Projects() {
               transition={{ duration: 0.35, delay: i * 0.05 }}
               className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 sm:p-8 hover:border-[var(--color-text-muted)]/40 transition-colors duration-300"
             >
+            <div className="flex gap-4 sm:gap-6">
+              {project.logo && (
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg bg-white flex items-center justify-center p-2">
+                  <Image
+                    src={project.logo}
+                    alt={`${project.title} logo`}
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+              <div className="flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
               <div>
-                {project.logo && (
-                  <div className="mb-3">
-                    <Image
-                      src={project.logo}
-                      alt={`${project.title} logo`}
-                      width={40}
-                      height={40}
-                      className="rounded-md"
-                    />
-                  </div>
-                )}
                 <p className="text-xs font-mono text-[var(--color-accent)] mb-1">
                   {project.categoryLabel}
                 </p>
@@ -158,6 +160,8 @@ export default function Projects() {
                 ))}
               </div>
             )}
+              </div>
+            </div>
           </motion.article>
           ))}
         </AnimatePresence>
