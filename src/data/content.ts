@@ -20,8 +20,8 @@ export const PROJECTS = [
   {
     id: "somerville-museum",
     title: "Somerville Museum Inventory System",
-    logo: "/somervillemuseum/sm-logo.svg",
-    logoText: "/somervillemuseum/SM_LOGO.svg",
+    logo: "/somervillemuseum/SM_LOGO.svg",
+    logoText: "/somervillemuseum/sm-logo.svg",
     category: "fullstack" as ProjectCategory,
     categoryLabel: "Full-Stack / Backend / Infrastructure",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Serverless", "Vercel"],
