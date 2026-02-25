@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { PROJECTS } from "@/data/content";
+import CommonwealthKitchenLogo from "@/components/logos/CommonwealthKitchenLogo";
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({ slug: project.id }));
@@ -44,15 +45,19 @@ export default async function ProjectDetailPage({
         </Link>
 
         <header className="mb-10">
-          {project.logoText && (
+          {(project.logoText || project.id === "commonwealth-kitchen") && (
             <div className="mb-4">
-              <Image
-                src={project.logoText}
-                alt={`${project.title} logo`}
-                width={220}
-                height={40}
-                className="h-10 w-auto"
-              />
+              {project.id === "commonwealth-kitchen" ? (
+                <CommonwealthKitchenLogo className="h-10 w-auto" />
+              ) : (
+                <Image
+                  src={project.logoText!}
+                  alt={`${project.title} logo`}
+                  width={220}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              )}
             </div>
           )}
           <p className="text-xs font-mono text-[var(--color-accent)] mb-2">
@@ -64,6 +69,11 @@ export default async function ProjectDetailPage({
           <p className="text-lg text-[var(--color-text-muted)] mb-6 max-w-2xl">
             {project.oneLiner}
           </p>
+          {"description" in project && project.description && (
+            <p className="text-[var(--color-text-muted)] mb-6 max-w-2xl">
+              {project.description}
+            </p>
+          )}
           <div className="flex flex-wrap gap-4">
             {project.demo && (
               <a
@@ -93,6 +103,43 @@ export default async function ProjectDetailPage({
             )}
           </div>
         </header>
+
+        {("problem" in project && project.problem) ||
+        ("solution" in project && project.solution) ||
+        ("technicalOverview" in project && project.technicalOverview) ? (
+          <section className="mb-12 space-y-8">
+            {"problem" in project && project.problem && (
+              <div>
+                <h2 className="text-xl font-semibold text-[var(--color-text)] mb-3">
+                  Problem
+                </h2>
+                <p className="text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+                  {project.problem}
+                </p>
+              </div>
+            )}
+            {"solution" in project && project.solution && (
+              <div>
+                <h2 className="text-xl font-semibold text-[var(--color-text)] mb-3">
+                  Solution
+                </h2>
+                <p className="text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+                  {project.solution}
+                </p>
+              </div>
+            )}
+            {"technicalOverview" in project && project.technicalOverview && (
+              <div>
+                <h2 className="text-xl font-semibold text-[var(--color-text)] mb-3">
+                  Technical overview
+                </h2>
+                <p className="text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+                  {project.technicalOverview}
+                </p>
+              </div>
+            )}
+          </section>
+        ) : null}
 
         {project.screenshots.length > 0 && (
           <section className="mb-12">

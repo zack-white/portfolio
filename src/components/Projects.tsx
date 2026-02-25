@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, type ProjectCategory } from "@/data/content";
+import CommonwealthKitchenLogo from "@/components/logos/CommonwealthKitchenLogo";
 
 const FILTERS: { id: ProjectCategory | "all"; label: string }[] = [
   { id: "all", label: "All" },
@@ -61,15 +62,19 @@ export default function Projects() {
               className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 sm:p-8 hover:border-[var(--color-text-muted)]/40 transition-colors duration-300"
             >
             <div className="flex gap-4 sm:gap-6">
-              {project.logo && (
+              {(project.logo || project.id === "commonwealth-kitchen") && (
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg bg-white flex items-center justify-center p-2">
-                  <Image
-                    src={project.logo}
-                    alt={`${project.title} logo`}
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-contain"
-                  />
+                  {project.id === "commonwealth-kitchen" ? (
+                    <CommonwealthKitchenLogo className="w-full h-full" />
+                  ) : (
+                    <Image
+                      src={project.logo!}
+                      alt={`${project.title} logo`}
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
                 </div>
               )}
               <div className="flex-1 min-w-0">

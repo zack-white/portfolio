@@ -58,6 +58,14 @@ export const PROJECTS = [
     stack: ["Next.js", "FastAPI", "Raspberry Pi", "Nmap"],
     oneLiner:
       "Real-time Wi-Fi security dashboard built at JumboHack 2026 that turns packet captures and port scans into plain-language risk insights for non-technical users.",
+    description:
+      "PingPoint is a location-aware coordination platform for moments when clarity and speed matter. It lets teams send targeted alerts, get status confirmations in seconds, and turn scattered updates into a single, live view that everyone can trust—replacing long message chains with one source of truth.",
+    problem:
+      "Teams often rely on broad, noisy channels (group chats, email, mass notifications) when they need fast, reliable coordination. That leads to unclear ownership and delayed decisions; status is spread across tools with no shared operational view, and when timing is critical, slow or messy communication undermines confidence and response time.",
+    solution:
+      "PingPoint focuses on the path from signal to response: targeted communication by team, role, or location; real-time visibility into who has responded and where follow-up is needed; structured check-ins for clear, actionable responses; and one live view so leadership, coordinators, and frontline teams stay aligned. The outcome is faster acknowledgments, better situational awareness, and more confident decisions without adding complexity for people in the field.",
+    technicalOverview:
+      "PingPoint is built to support low-latency, location-aware coordination: ping creation and routing by team, role, or geography; real-time tracking of acknowledgments and responses so the dashboard reflects current status; structured response storage so the system can highlight priorities, gaps, and next actions; and a single source of truth so coordinators and leaders see one live operational picture instead of reconciling multiple channels.",
     contributions: [
       "Built dashboard interaction flows and scan-state UX (initial scan + re-scan behavior)",
       "Implemented Next.js API proxy routes to Pi endpoints for scan, Nmap, and LLM workflows",
