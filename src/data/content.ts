@@ -351,7 +351,7 @@ export const BLOG_POSTS = [
   },
   {
     slug: "building-this-portfolio",
-    title: "Building This Portfolio",
+    title: "Building My Portfolio",
     excerpt: "Notes on the stack and design decisions behind zwhite.dev.",
     date: "2025-02-01",
     tags: ["web", "next.js"],
