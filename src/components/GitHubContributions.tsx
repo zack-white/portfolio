@@ -24,9 +24,10 @@ const levelClasses = [
 ];
 
 export default function GitHubContributions() {
-  const year = new Date().getFullYear();
+  const today = new Date();
+  const startDate = new Date(today);
+  startDate.setDate(today.getDate() - 364);
   const [data, setData] = useState<ContributionDay[] | null>(null);
-  const [total, setTotal] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -35,10 +36,9 @@ export default function GitHubContributions() {
     async function loadContributions() {
       try {
         setError(null);
-        const response = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}?y=${year}`,
-          { cache: "no-store" }
-        );
+        const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}`, {
+          cache: "no-store",
+        });
 
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`);
@@ -48,7 +48,6 @@ export default function GitHubContributions() {
         if (cancelled) return;
 
         setData(json.contributions);
-        setTotal(json.total[String(year)] ?? null);
       } catch (err) {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : "Unable to load contributions");
@@ -60,10 +59,24 @@ export default function GitHubContributions() {
     return () => {
       cancelled = true;
     };
-  }, [year]);
+  }, []);
 
-  const cells = data ?? Array.from({ length: 371 }, () => ({ date: "", count: 0, level: 0 }));
-  const tooltip = total !== null ? `${total.toLocaleString()} contributions in ${year}` : "Loading contribution data";
+  const contributionByDate = new Map(
+    (data ?? []).map((day) => [day.date, day])
+  );
+  const cells = Array.from({ length: 365 }, (_, index) => {
+    const date = new Date(startDate);
+    date.setDate(startDate.getDate() + index);
+    const isoDate = date.toISOString().slice(0, 10);
+    const day = contributionByDate.get(isoDate);
+
+    return {
+      date: isoDate,
+      count: day?.count ?? 0,
+      level: day?.level ?? 0,
+    };
+  });
+  const tooltip = data ? "Last 365 days of contributions" : "Loading contribution data";
 
   return (
     <section className="section pb-16">
@@ -71,10 +84,10 @@ export default function GitHubContributions() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-4">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold text-[var(--color-text)]">
-              GitHub Contributions - {year}
+              GitHub Contributions - Last 365 Days
             </h2>
             <p className="text-sm text-[var(--color-text-muted)] mt-1">
-              Live contribution graph for the calendar year.
+              Live contribution graph for the trailing year.
             </p>
           </div>
           <a
