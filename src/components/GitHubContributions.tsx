@@ -23,6 +23,25 @@ const levelClasses = [
   "bg-[color:rgba(13,148,136,0.92)]",
 ];
 
+function buildFallbackCells() {
+  const cells: ContributionDay[] = [];
+  const today = new Date();
+  const start = new Date(today);
+  start.setDate(today.getDate() - 364);
+
+  for (let index = 0; index < 365; index += 1) {
+    const date = new Date(start);
+    date.setDate(start.getDate() + index);
+    cells.push({
+      date: date.toISOString().slice(0, 10),
+      count: 0,
+      level: 0,
+    });
+  }
+
+  return cells;
+}
+
 export default function GitHubContributions() {
   const today = new Date();
   const startDate = new Date(today);
@@ -64,19 +83,26 @@ export default function GitHubContributions() {
   const contributionByDate = new Map(
     (data ?? []).map((day) => [day.date, day])
   );
-  const cells = Array.from({ length: 365 }, (_, index) => {
-    const date = new Date(startDate);
-    date.setDate(startDate.getDate() + index);
-    const isoDate = date.toISOString().slice(0, 10);
-    const day = contributionByDate.get(isoDate);
+  const cells =
+    data?.length
+      ? Array.from({ length: 365 }, (_, index) => {
+          const date = new Date(startDate);
+          date.setDate(startDate.getDate() + index);
+          const isoDate = date.toISOString().slice(0, 10);
+          const day = contributionByDate.get(isoDate);
 
-    return {
-      date: isoDate,
-      count: day?.count ?? 0,
-      level: day?.level ?? 0,
-    };
-  });
-  const tooltip = data ? "Last 365 days of contributions" : "Loading contribution data";
+          return {
+            date: isoDate,
+            count: day?.count ?? 0,
+            level: day?.level ?? 0,
+          };
+        })
+      : buildFallbackCells();
+  const tooltip = error
+    ? "Showing fallback calendar"
+    : data
+      ? "Last 365 days of contributions"
+      : "Loading contribution data";
 
   return (
     <section className="section pb-16">
@@ -102,7 +128,7 @@ export default function GitHubContributions() {
 
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between gap-4 text-xs text-[var(--color-text-muted)]">
-            <span>{error ? "Tracker unavailable" : tooltip}</span>
+            <span>{tooltip}</span>
             <div className="flex items-center gap-2">
               <span>Less</span>
               {levelClasses.map((cls, index) => (
@@ -117,29 +143,23 @@ export default function GitHubContributions() {
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
-            {error ? (
-              <div className="min-h-[128px] flex items-center justify-center text-sm text-[var(--color-text-muted)]">
-                Could not load the contribution calendar.
-              </div>
-            ) : (
-              <div className="grid min-w-[720px] grid-flow-col grid-rows-7 gap-1">
-                {cells.map((day, index) => {
-                  const level = Math.max(0, Math.min(day.level ?? 0, levelClasses.length - 1));
-                  const title = day.date
-                    ? `${day.date}: ${day.count} contribution${day.count === 1 ? "" : "s"}`
-                    : "Loading...";
+            <div className="grid min-w-[720px] grid-flow-col grid-rows-7 gap-1">
+              {cells.map((day, index) => {
+                const level = Math.max(0, Math.min(day.level ?? 0, levelClasses.length - 1));
+                const title = day.date
+                  ? `${day.date}: ${day.count} contribution${day.count === 1 ? "" : "s"}`
+                  : "Loading...";
 
-                  return (
-                    <div
-                      key={`${day.date || "placeholder"}-${index}`}
-                      title={title}
-                      aria-label={title}
-                      className={`h-3 w-3 rounded-sm border border-white/5 ${levelClasses[level]}`}
-                    />
-                  );
-                })}
-              </div>
-            )}
+                return (
+                  <div
+                    key={`${day.date || "placeholder"}-${index}`}
+                    title={title}
+                    aria-label={title}
+                    className={`h-3 w-3 rounded-sm border border-white/5 ${levelClasses[level]}`}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
