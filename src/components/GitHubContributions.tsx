@@ -16,11 +16,11 @@ type ContributionResponse = {
 };
 
 const levelClasses = [
-  "bg-[color:rgba(148,163,184,0.14)]",
-  "bg-[color:rgba(94,234,212,0.20)]",
-  "bg-[color:rgba(45,212,191,0.42)]",
-  "bg-[color:rgba(20,184,166,0.68)]",
-  "bg-[color:rgba(13,148,136,0.92)]",
+  "bg-[color:rgba(34,197,94,0.10)]",
+  "bg-[color:rgba(34,197,94,0.24)]",
+  "bg-[color:rgba(34,197,94,0.44)]",
+  "bg-[color:rgba(34,197,94,0.68)]",
+  "bg-[color:rgba(34,197,94,0.96)]",
 ];
 
 function buildFallbackCells() {
@@ -134,7 +134,7 @@ export default function GitHubContributions() {
               {levelClasses.map((cls, index) => (
                 <span
                   key={cls}
-                  className={`h-3 w-3 rounded-sm border border-white/5 ${cls}`}
+                  className={`h-3 w-3 rounded-sm border border-[rgba(34,197,94,0.18)] ${cls}`}
                   aria-hidden
                 />
               ))}
@@ -155,7 +155,7 @@ export default function GitHubContributions() {
                     key={`${day.date || "placeholder"}-${index}`}
                     title={title}
                     aria-label={title}
-                    className={`h-3 w-3 rounded-sm border border-white/5 ${levelClasses[level]}`}
+                    className={`h-3 w-3 rounded-sm border border-[rgba(34,197,94,0.12)] ${levelClasses[level]}`}
                   />
                 );
               })}
