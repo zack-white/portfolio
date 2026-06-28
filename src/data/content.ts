@@ -331,38 +331,9 @@ export const SKILLS = {
   ],
 } as const;
 
-export const BLOG_POSTS = [
-  {
-    slug: "Clawdbot",
-    title: "My Experience with Clawdbot",
-    excerpt: "Trying the viral AI personal assistant.",
-    date: "2025-02-17",
-    tags: ["devtools", "ai"],
-    body: `I can't seem to get Clawdbot/Openclaw off of my Twitter feed for the past few weeks. For those unfamiliar, it's an AI assistant running on your machine that serves as an interface for Codex/Claude to interact with your actual filesystem. It can be configured to browse the internet, respond to emails and messages, and even monitor your Github for any issues, working as a 24/7 vulnerability protection, developer, and tech lead.
-    I decided to give it a try, and I'm glad I did. It's a fun way to interact with your machine, and it's a great way to get started with AI. I configured it to run on my Mac whenever it is on, and I am able to message it through my terminal or via Telegram. I currently have it set up to monitor my job applications email, notifying me of any action items on a given day. It is very tempting to buy a Mac Mini like AI bros on Twitter who have theirs running any business operations overnight, but I am not quite ready to drop $600 on something with such serious security risks. Perhaps one day. However, in interacting with it, it is able to take in an incredible amount of context from your machine to personalize responses in a way a web interface or even Cursor cannot at the moment. It really feels like the next generation in agentic development, and I'm excited to see where it goes. Super excited at the commitment the creator has put forth to keep the project open source and accessible to all. Sorry if this came off a bit rambly, just wanted to share some quick thoughts before I dive in to make it even more efficient.`,
-  },
-  {
-    slug: "welcome",
-    title: "Welcome to the Blog",
-    excerpt: "A place for technical notes, project reflections, and ideas.",
-    date: "2025-02-13",
-    tags: ["meta"],
-    body: "This blog is a place to share technical notes, project reflections, and ideas from my work in software engineering. I'll write about full-stack development, backend systems, ML pipelines, and things I learn along the way. This is my first time creating a blog, so expect very intermittent updates, but I'm excited to share more.",
-  },
-  {
-    slug: "building-this-portfolio",
-    title: "Building The Portfolio",
-    excerpt: "Notes on the stack and design decisions behind zwhite.dev.",
-    date: "2025-02-01",
-    tags: ["web", "next.js"],
-    body: "This portfolio is built with Next.js 16, React, and Tailwind CSS. I chose a minimal dark theme with subtle grid animations and a focus on readability. The site is deployed on Vercel. I plan to continue iterating on the design and content of the site, and provide updates on projects I am currently working on. I'm excited to share more about my work and ideas with you!",
-  },
-] as const;
-
 export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
-  { href: "/blog", label: "Blog" },
 ] as const;
